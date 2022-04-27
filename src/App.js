@@ -94,6 +94,8 @@ function reducer(state, { type, payload }) {
         operation: null,
         currentOperand: evaluate(state),
       };
+    default:
+      console.log("Unexpected error");
   }
 }
 
@@ -115,6 +117,8 @@ function evaluate({ currentOperand, previousOperand, operation }) {
     case "/":
       computation = prev / current;
       break;
+    default:
+      console.log("unexpected error");
   }
 
   return computation.toString();
